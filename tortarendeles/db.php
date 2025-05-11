@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost';
 $db = 'tortarendeles';
-$user = 'root'; // XAMPP alapértelmezett
+$user = 'root';
 $pass = '';
 
 $conn = new mysqli($host, $user, $pass, $db);

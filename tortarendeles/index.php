@@ -2,11 +2,9 @@
 session_start();
 require 'db.php';
 
-// Lekérdezzük az opciókat az adatbázisból
 $options_query = "SELECT * FROM options ORDER BY category";
 $options_result = $conn->query($options_query);
 
-// Csoportosítjuk az opciókat kategóriák szerint a könnyebb elérés érdekében
 $options = [];
 while ($row = $options_result->fetch_assoc()) {
     $options[$row['category']][] = $row['value'];
@@ -56,7 +54,6 @@ while ($row = $options_result->fetch_assoc()) {
             <select id="slice" name="slice">
                 <option value="" disabled selected>Válassz...</option>
                 <?php
-                    // Dinamikusan megjelenítjük a piskóta ízeket az adatbázisból
                     if (isset($options['slice'])) {
                         foreach ($options['slice'] as $slice) {
                             echo "<option value='{$slice}'>{$slice}</option>";
@@ -69,7 +66,6 @@ while ($row = $options_result->fetch_assoc()) {
             <select id="cake-shape" name="cake-shape">
                 <option value="" disabled selected>Válassz...</option>
                 <?php
-                    // Dinamikusan megjelenítjük a piskóta ízeket az adatbázisból
                     if (isset($options['shape'])) {
                         foreach ($options['shape'] as $shape) {
                             echo "<option value='{$shape}'>{$shape}</option>";
@@ -82,7 +78,6 @@ while ($row = $options_result->fetch_assoc()) {
             <select id="cake-flavor" name="cake-flavor">
                 <option value="" disabled selected>Válassz...</option>
                 <?php
-                    // Dinamikusan megjelenítjük a piskóta ízeket az adatbázisból
                     if (isset($options['flavor'])) {
                         foreach ($options['flavor'] as $flavor) {
                             echo "<option value='{$flavor}'>{$flavor}</option>";
@@ -95,7 +90,6 @@ while ($row = $options_result->fetch_assoc()) {
             <select id="cream-flavor" name="cream-flavor">
                 <option value="" disabled selected>Válassz...</option>
                 <?php
-                    // Dinamikusan megjelenítjük a krém ízeket az adatbázisból
                     if (isset($options['cream'])) {
                         foreach ($options['cream'] as $cream) {
                             echo "<option value='{$cream}'>{$cream}</option>";
@@ -108,7 +102,6 @@ while ($row = $options_result->fetch_assoc()) {
             <select id="cake-icing" name="cake-icing">
                 <option value="" disabled selected>Válassz...</option>
                 <?php
-                    // Dinamikusan megjelenítjük a krém ízeket az adatbázisból
                     if (isset($options['icing'])) {
                         foreach ($options['icing'] as $icing) {
                             echo "<option value='{$icing}'>{$icing}</option>";
@@ -121,7 +114,6 @@ while ($row = $options_result->fetch_assoc()) {
             <select id="cake-decor" name="cake-decor">
                 <option value="" disabled selected>Válassz...</option>
                 <?php
-                    // Dinamikusan megjelenítjük a krém ízeket az adatbázisból
                     if (isset($options['decor'])) {
                         foreach ($options['decor'] as $decor) {
                             echo "<option value='{$decor}'>{$decor}</option>";

@@ -53,9 +53,12 @@ while ($row = $result->fetch_assoc()) {
 ?>
 <form action="add_option.php" method="post">
     <select name="category">
+        <option value="slice">Szelet</option>
+        <option value="shape">Forma</option>
         <option value="flavor">Piskóta íz</option>
         <option value="cream">Krém</option>
-        <!-- stb. -->
+        <option value="icing">Borítás</option>
+        <option value="decor">Díszítés</option>
     </select>
     <input name="value" placeholder="Új érték">
     <button type="submit">Hozzáadás</button>
